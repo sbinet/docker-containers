@@ -2,7 +2,7 @@ FROM binet/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 ## install useful programs for development
-RUN yum install \
+RUN yum install -y \
     gcc gcc-c++ gcc-fortran \
     git \
     patch
