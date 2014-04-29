@@ -23,8 +23,8 @@ ENV PATH         /usr/local/go/bin:$PATH
 ## make sure go is correctly installed
 RUN go version
 
-ONBUILD ENV PYTHONSTARTUP /$HOME/.pythonrc.py
-ENV PYTHONSTARTUP /$HOME/.pythonrc.py
+ONBUILD ENV PYTHONSTARTUP $HOME/.pythonrc.py
+ENV PYTHONSTARTUP $HOME/.pythonrc.py
 
 ## add files last (as this invalids caches)
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
