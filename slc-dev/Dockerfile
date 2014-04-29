@@ -11,7 +11,7 @@ RUN yum install -y \
 ## install go
 RUN curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz | \
     tar -C /usr/local -zxf -
-RUN /bin/ls -f /usr/local/go/bin/go    /usr/local/bin/go
-RUN /bin/ls -f /usr/local/go/bin/godoc /usr/local/bin/godoc
-RUN /bin/ls -f /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+RUN /bin/ln -f /usr/local/go/bin/go    /usr/local/bin/go
+RUN /bin/ln -f /usr/local/go/bin/godoc /usr/local/bin/godoc
+RUN /bin/ln -f /usr/local/go/bin/gofmt /usr/local/bin/gofmt
 
