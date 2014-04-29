@@ -7,7 +7,7 @@ build: Dockerfile
 	docker build -t binet/build-slc-base .
 	@echo "... images ..."
 	docker images -q binet/build-slc-base
-	dockerid=`docker images -q binet/build-slc-base`
+	dockerid=$(shell docker images -q binet/build-slc-base)
 	docker cp $(dockerid):/build/docker.tar build/docker.tar
 
 upload: build
