@@ -3,8 +3,8 @@
 all: build
 	@echo "done"
 
-build:
-	dockerid=$(docker build --no-cache -t binet/build-slc-base .)
+build: Dockerfile
+	dockerid=`$(docker build --no-cache -t binet/build-slc-base .)`
 	docker cp $(dockerid):/build/docker.tar build/docker.tar
 
 upload: build
