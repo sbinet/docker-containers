@@ -12,6 +12,5 @@ RUN git clone \
 	git://github.com/sbinet/docker-containers \
 	/docker-containers
 
-RUN mkdir /build && \
-	cd /build && \
+RUN cd /build && \
 	/docker-containers/mkimage-slc.sh
