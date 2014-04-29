@@ -5,10 +5,8 @@ all: build
 
 build: Dockerfile
 	docker build -t binet/build-slc-base .
-	@echo "... images ..."
-	docker images -q binet/build-slc-base
-	dockerid=$(shell docker images -q binet/build-slc-base)
-	docker cp $(dockerid):/build/docker.tar build/docker.tar
+	docker run -i -t $(shell docker images -q binet/build-slc-base) /bin/true
+	$(shell	docker cp $(shell docker ps -a | grep binet/build-slc-base | head -n1 | cut -d ' ' -f1):/build/docker.tar build)
 
 upload: build
 	docker import build/docker.tar - binet/slc-base:6.5
