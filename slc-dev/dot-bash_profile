@@ -8,4 +8,4 @@ if [ -f "$HOME/.bashrc" ] ; then
   source $HOME/.bashrc
 fi
 
-export PYTHONSTARTUP=/.pythonrc.py
+export PYTHONSTARTUP=/$HOME/.pythonrc.py
