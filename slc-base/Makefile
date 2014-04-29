@@ -5,4 +5,3 @@ all: build
 
 build: Dockerfile
 	docker build --no-cache -t binet/build-slc-base .
-	docker cp binet/build-slc-base:/build .
