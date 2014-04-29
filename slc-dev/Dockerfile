@@ -5,7 +5,8 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 RUN yum install -y \
     gcc gcc-c++ gcc-gfortran \
     git \
-    patch
+    patch \
+    tar
 
 ## install go
 RUN curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz | \
