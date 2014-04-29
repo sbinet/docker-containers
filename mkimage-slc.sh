@@ -114,4 +114,5 @@ if [ -z "$version" ]; then
 	version="$distro"
 fi
 
-tar --numeric-owner -c . | docker import - $repo:$version
+mkdir /build
+tar --numeric-owner -c . >| /build/docker.tar
