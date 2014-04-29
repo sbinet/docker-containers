@@ -3,7 +3,7 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 
 # install a few dependencies
 RUN apt-get install -y \
-	git lzo rinse sudo tar xz xz-libs
+	git rinse sudo tar
 
 RUN git clone \
 	git://github.com/sbinet/docker-containers \
