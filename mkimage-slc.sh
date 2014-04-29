@@ -52,51 +52,51 @@ set -x
 
 mkdir -p "$target"
 
-sudo rinse "${rinseArgs[@]}"
+rinse "${rinseArgs[@]}"
 
 cd "$target"
 
 # rinse fails a little at setting up /dev, so we'll just wipe it out and create our own
-sudo rm -rf dev
-sudo mkdir -m 755 dev
+rm -rf dev
+mkdir -m 755 dev
 (
 	cd dev
-	sudo ln -sf /proc/self/fd ./
-	sudo mkdir -m 755 pts
-	sudo mkdir -m 1777 shm
-	sudo mknod -m 600 console c 5 1
-	sudo mknod -m 600 initctl p
-	sudo mknod -m 666 full c 1 7
-	sudo mknod -m 666 null c 1 3
-	sudo mknod -m 666 ptmx c 5 2
-	sudo mknod -m 666 random c 1 8
-	sudo mknod -m 666 tty c 5 0
-	sudo mknod -m 666 tty0 c 4 0
-	sudo mknod -m 666 urandom c 1 9
-	sudo mknod -m 666 zero c 1 5
+	ln -sf /proc/self/fd ./
+	mkdir -m 755 pts
+	mkdir -m 1777 shm
+	mknod -m 600 console c 5 1
+	mknod -m 600 initctl p
+	mknod -m 666 full c 1 7
+	mknod -m 666 null c 1 3
+	mknod -m 666 ptmx c 5 2
+	mknod -m 666 random c 1 8
+	mknod -m 666 tty c 5 0
+	mknod -m 666 tty0 c 4 0
+	mknod -m 666 urandom c 1 9
+	mknod -m 666 zero c 1 5
 )
 
 # effectively: febootstrap-minimize --keep-zoneinfo --keep-rpmdb --keep-services "$target"
 #  locales
-sudo rm -rf usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}
+rm -rf usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}
 #  docs
-sudo rm -rf usr/share/{man,doc,info,gnome/help}
+rm -rf usr/share/{man,doc,info,gnome/help}
 #  cracklib
-sudo rm -rf usr/share/cracklib
+rm -rf usr/share/cracklib
 #  i18n
-sudo rm -rf usr/share/i18n
+rm -rf usr/share/i18n
 #  yum cache
-sudo rm -rf var/cache/yum
-sudo mkdir -p --mode=0755 var/cache/yum
+rm -rf var/cache/yum
+mkdir -p --mode=0755 var/cache/yum
 #  sln
-sudo rm -rf sbin/sln
+rm -rf sbin/sln
 #  ldconfig
-#sudo rm -rf sbin/ldconfig
-sudo rm -rf etc/ld.so.cache var/cache/ldconfig
-sudo mkdir -p --mode=0755 var/cache/ldconfig
+#rm -rf sbin/ldconfig
+rm -rf etc/ld.so.cache var/cache/ldconfig
+mkdir -p --mode=0755 var/cache/ldconfig
 
 # allow networking init scripts inside the container to work without extra steps
-echo 'NETWORKING=yes' | sudo tee etc/sysconfig/network > /dev/null
+echo 'NETWORKING=yes' | tee etc/sysconfig/network > /dev/null
 
 # to restore locales later:
 #  yum reinstall glibc-common
@@ -114,4 +114,4 @@ if [ -z "$version" ]; then
 	version="$distro"
 fi
 
-sudo tar --numeric-owner -c . | docker import - $repo:$version
+tar --numeric-owner -c . | docker import - $repo:$version
