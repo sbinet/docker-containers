@@ -1,9 +1,9 @@
-FROM centos
+FROM ubuntu
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 # install a few dependencies
-RUN yum install -y \
-	febootstrap git lzo rinse sudo tar xz xz-libs
+RUN apt-get install -y \
+	git lzo rinse sudo tar xz xz-libs
 
 RUN git clone \
 	git://github.com/sbinet/docker-containers \
