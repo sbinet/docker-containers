@@ -3,7 +3,7 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 
 # install a few dependencies
 RUN yum install -y \
-	git lzo tar
+	febootstrap git lzo tar
 
 RUN git clone \
 	git://github.com/sbinet/docker-containers \
