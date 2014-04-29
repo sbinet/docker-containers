@@ -7,7 +7,7 @@ all: build
 
 build: Dockerfile
 	docker build -t binet/build-slc-base .
-	docker run -i -t $(shell docker images -q binet/build-slc-base) /bin/true
+	docker run -i -t $(shell docker images -q binet/build-slc-base|) /bin/ls
 	$(shell	docker cp $(shell docker ps -a | grep binet/build-slc-base | head -n1 | cut -d ' ' -f1):/build/docker.tar build)
 	cat build/docker.tar | docker import - binet/slc-base:$(VERSION)
 
