@@ -18,7 +18,14 @@ RUN yum install -y \
 ## install go
 RUN curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz | \
     tar -C /usr/local -zxf -
-RUN /bin/ln -f /usr/local/go/bin/go    /usr/local/bin/go
-RUN /bin/ln -f /usr/local/go/bin/godoc /usr/local/bin/godoc
-RUN /bin/ln -f /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+ENV PATH         /usr/local/go/bin:$PATH
+
+## make sure go is correctly installed
+RUN go version
+
+
+## add files last (as this invalids caches)
+ADD dot-pythonrc.py  /.pythonrc.py
+ADD dot-bashrc       /.bashrc
+ADD dot-bash_profile /.bash_profile
 
