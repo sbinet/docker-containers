@@ -13,7 +13,6 @@ ENV MYSITEROOT /opt/lhcb
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 RUN mkdir -p $MYSITEROOT
-WORKDIR $MYSITEROOT
 
 ## install some system dependencies
 RUN yum install -y \
@@ -22,11 +21,13 @@ RUN yum install -y \
     tar
 
 ## retrieve install
-RUN curl -O -L http://lhcbproject.web.cern.ch/lhcbproject/dist/install_project.py && \
+RUN cd $MYSITEROOT && \
+    curl -O -L http://lhcbproject.web.cern.ch/lhcbproject/dist/install_project.py && \
     chmod +x ./install_project.py
 
 ## install LHCB (source+binaries)
-RUN ./install_project.py -b LHCB v37r1
+RUN cd $MYSITEROOT && \
+    ./install_project.py -b LHCB v37r1
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
