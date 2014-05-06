@@ -1,3 +1,7 @@
+##
+## binet/lhcb
+## A container where the LHCb software stack has been installed
+##
 FROM binet/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
