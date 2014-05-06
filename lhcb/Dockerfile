@@ -8,10 +8,10 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 USER root
 ENV USER root
 
-RUN mkdir -p /opt/lhcb
-
 ENV MYSITEROOT /opt/lhcb
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
+
+RUN mkdir -p $MYSITEROOT
 
 
 ## install some system dependencies
