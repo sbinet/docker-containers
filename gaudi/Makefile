@@ -10,7 +10,7 @@ all: build
 
 build: Dockerfile
 	docker build --rm --tag=$(REPO) .
-	docker tag $(shell docker images -q $(REPO)):$(TAG)
+	docker tag $(REPO):$(TAG)
 
 upload: build
 	docker push $(REPO):$(TAG)
