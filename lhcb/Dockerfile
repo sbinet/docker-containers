@@ -12,6 +12,10 @@ ENV CMTCONFIG x86_64-slc6-gcc48-opt
 RUN export CMTCONFIG=x86_64-slc6-gcc48-opt
 
 
+## install some system dependencies
+RUN yum install -y \
+	tar
+
 ## retrieve install
 RUN cd $MYSITEROOT && \
 	curl -O -L http://lhcbproject.web.cern.ch/lhcbproject/dist/install_project.py && \
