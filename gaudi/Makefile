@@ -10,7 +10,7 @@ all: build
 
 build: Dockerfile
 	docker build --rm --tag=$(REPO) .
-	docker run -i -t $(shell docker images -q $(REPO)) /bin/ls
+	docker run -i -t $(shell docker images -q $(REPO) | uniq) /bin/ls
 	docker tag --force $(shell docker images -q $(REPO)) $(REPO):$(TAG)
 
 upload: build
