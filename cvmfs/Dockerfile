@@ -20,7 +20,7 @@ RUN cd /etc/pki/rpm-gpg/ && \
     curl -O -L http://cvmrepo.web.cern.ch/cvmrepo/yum/RPM-GPG-KEY-CernVM
 
 # Install rpms
-RUN yum -y install fuse cvmfs SL_no_colorls cvmfs-init-scripts
+RUN yum -y install fuse cvmfs SL_no_colorls cvmfs-init-scripts cvmfs-auto-setup
 
 WORKDIR /root
 
