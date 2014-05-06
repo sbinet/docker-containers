@@ -1,12 +1,18 @@
+## binet/lhcb
+
 .PHONY: all build
+
+REPO := binet/lhcb
+TAG := v37r1
 
 all: build
 	@echo "done"
 
 build: Dockerfile
-	docker build --rm --tag=binet/lhcb:v37r1 .
+	docker build --rm --tag=$(REPO) .
+	docker tag $(REPO):$(TAG)
 
 upload: build
-	docker push binet/lhcb:v37r1
+	docker push $(REPO):$(TAG)
 
 
