@@ -34,7 +34,7 @@ RUN cd $MYSITEROOT && \
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
     mkdir $MYSITEROOT/{tmp,targz}
 
-WORKDIR $HOME
+WORKDIR /root
 
 ## add files last (as this invalids caches)
 ADD dot-pythonrc.py  $HOME/.pythonrc.py

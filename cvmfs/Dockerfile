@@ -20,7 +20,7 @@ RUN cd /etc/pki/rpm-gpg/ && \
 # Install rpms
 RUN yum -y install fuse cvmfs SL_no_colorls cvmfs-init-scripts
 
-WORKDIR $HOME
+WORKDIR /root
 
 ## add files last (as this invalids caches)
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
