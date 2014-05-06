@@ -2,7 +2,7 @@ FROM binet/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
 
 USER root
-ENV USER=root
+ENV USER root
 
 RUN mkdir -p /opt/lhcb
 
