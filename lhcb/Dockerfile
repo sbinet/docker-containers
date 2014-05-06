@@ -29,6 +29,6 @@ RUN cd $MYSITEROOT && \
 	./install_project.py -b LHCB v37r1
 
 ## clean-up
-RUN /bin/rm -rf $MYSITEROOT/tmp && \
-	mkdir $MYSITEROOT/tmp
+RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
+	mkdir $MYSITEROOT/{tmp,targz}
 
