@@ -9,7 +9,8 @@ all: build
 	@echo "done"
 
 build: Dockerfile
-	docker build --rm --tag=$(REPO):$(TAG) .
+	docker build --rm --tag=$(REPO) .
+	docker tag $(shell docker images -q $(REPO)):$(TAG)
 
 upload: build
 	docker push $(REPO):$(TAG)
