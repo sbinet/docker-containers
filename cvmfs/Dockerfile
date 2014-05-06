@@ -8,6 +8,8 @@ MAINTAINER Sebastien Binet "binet@cern.ch"
 USER root
 ENV USER root
 ENV HOME /root
+ENV VO_LHCB_SW_DIR /cvmfs/lhcb.cern.ch
+ENV MYSITEROOT     /cvmfs/lhcb.cern.ch
 
 # Install repo file
 RUN cd /etc/yum.repos.d/ && \
