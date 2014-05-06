@@ -7,9 +7,7 @@ ENV USER root
 RUN mkdir -p /opt/lhcb
 
 ENV MYSITEROOT /opt/lhcb
-RUN export MYSITEROOT=/opt/lhcb
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
-RUN export CMTCONFIG=x86_64-slc6-gcc48-opt
 
 
 ## install some system dependencies
