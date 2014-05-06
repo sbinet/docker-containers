@@ -12,6 +12,7 @@ ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 ## install some system dependencies
 RUN yum install -y \
+	bzip2 \
 	tar
 
 ## retrieve install
@@ -22,3 +23,8 @@ RUN cd $MYSITEROOT && \
 ## install LHCB (source+binaries)
 RUN cd $MYSITEROOT && \
 	./install_project.py -b LHCB v37r1
+
+## clean-up
+RUN /bin/rm -rf $MYSITEROOT/tmp && \
+	mkdir $MYSITEROOT/tmp
+
