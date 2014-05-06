@@ -19,4 +19,4 @@ RUN cd $MYSITEROOT && \
 
 ## install LHCB (source+binaries)
 RUN cd $MYSITEROOT && \
-	./install_project -b LHCB v37r1
+	./install_project.py -b LHCB v37r1
