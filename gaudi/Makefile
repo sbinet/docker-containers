@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := binet/gaudi
-TAG := v24r2
+TAG := v25r1
 
 all: build
 	@echo "done"
