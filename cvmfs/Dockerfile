@@ -11,6 +11,9 @@ ENV HOME /root
 ENV VO_LHCB_SW_DIR /cvmfs/lhcb.cern.ch
 ENV MYSITEROOT     /cvmfs/lhcb.cern.ch
 
+# make sure /dev/fuse is there with adequate perms
+RUN mknod /dev/fuse c 10 229 && chmod ga+rw /dev/fuse
+
 # install cvmfs repos
 RUN rpm -Uvh http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/6/x86_64/cvmfs-release-2-4.el6.noarch.rpm
 
