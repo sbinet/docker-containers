@@ -9,7 +9,7 @@ USER root
 ENV USER root
 ENV HOME /root
 
-ENV MYSITEROOT /opt/lhcb
+ENV MYSITEROOT /opt/lhcb-sw
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 RUN mkdir -p $MYSITEROOT
