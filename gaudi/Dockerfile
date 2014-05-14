@@ -23,13 +23,11 @@ RUN yum install -y \
     which
 
 ## retrieve install
-RUN cd $MYSITEROOT && \
-    curl -O -L http://lhcbproject.web.cern.ch/lhcbproject/dist/install_project.py && \
-    chmod +x ./install_project.py
+RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
+    chmod +x ./pkr
 
 ## install (source+binaries)
-RUN cd $MYSITEROOT && \
-    ./install_project.py -b GAUDI v24r2
+RUN ./pkr install GAUDI_v25r1_${CMTCONFIG}
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \

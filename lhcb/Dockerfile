@@ -22,13 +22,11 @@ RUN yum install -y \
     which
 
 ## retrieve install
-RUN cd $MYSITEROOT && \
-    curl -O -L http://lhcbproject.web.cern.ch/lhcbproject/dist/install_project.py && \
-    chmod +x ./install_project.py
+RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
+    chmod +x ./pkr
 
-## install LHCB (source+binaries)
-RUN cd $MYSITEROOT && \
-    ./install_project.py -b LHCB v37r1
+## install (source+binaries)
+RUN ./pkr install DAVINCI_v34r1_${CMTCONFIG}
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
