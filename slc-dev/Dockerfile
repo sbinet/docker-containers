@@ -34,5 +34,4 @@ ENV PYTHONSTARTUP $HOME/.pythonrc.py
 ## add files last (as this invalids caches)
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
 ADD dot-bashrc       $HOME/.bashrc
-ADD dot-bash_profile $HOME/.bash_profile
 
