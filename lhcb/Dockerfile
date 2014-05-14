@@ -26,7 +26,7 @@ RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
     chmod +x ./pkr
 
 ## install (source+binaries)
-RUN ./pkr install DAVINCI_v34r1_${CMTCONFIG}
+RUN ./pkr install DAVINCI_v34r1_`echo $CMTCONFIG| tr "-" "_"`
 
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
