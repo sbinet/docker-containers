@@ -1,6 +1,6 @@
 ##
 ## binet/lhcb
-## A container where the LHCb software stack has been installed
+## A container where the LHCb software stack (up to DaVinci) has been installed
 ##
 FROM binet/slc-base
 MAINTAINER Sebastien Binet "binet@cern.ch"
@@ -9,7 +9,7 @@ USER root
 ENV USER root
 ENV HOME /root
 
-ENV MYSITEROOT /opt/lhcb
+ENV MYSITEROOT /opt/lhcb-sw
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 RUN mkdir -p $MYSITEROOT
