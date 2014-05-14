@@ -17,7 +17,8 @@ RUN yum install -y \
     ncurses-devel \
     patch \
     readline readline-devel \
-    tar texinfo
+    tar texinfo \
+    which
 
 ## install go
 RUN curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz | \
