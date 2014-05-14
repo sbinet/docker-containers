@@ -32,6 +32,9 @@ RUN ./pkr install DAVINCI_v34r1_${CMTCONFIG}
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
     mkdir $MYSITEROOT/{tmp,targz}
 
+## temporary fixup for ROOT-6 install leaking into regular ROOT-5 install
+RUN /bin/rm -rf $MYSITEROOT/lcg/releases/ROOT/v5-99-*
+
 WORKDIR /root
 
 ## add files last (as this invalids caches)
