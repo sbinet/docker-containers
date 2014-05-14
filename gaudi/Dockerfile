@@ -13,7 +13,6 @@ ENV MYSITEROOT /opt/lhcb-sw
 ENV CMTCONFIG x86_64-slc6-gcc48-opt
 
 RUN mkdir -p $MYSITEROOT
-WORKDIR $MYSITEROOT
 
 ## install some system dependencies
 RUN yum install -y \
