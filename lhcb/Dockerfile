@@ -18,7 +18,8 @@ RUN mkdir -p $MYSITEROOT
 RUN yum install -y \
     bzip2 \
     freetype \
-    tar
+    tar \
+    which
 
 ## retrieve install
 RUN cd $MYSITEROOT && \
