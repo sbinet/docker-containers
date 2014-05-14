@@ -11,13 +11,8 @@ ENV HOME /root
 ENV VO_LHCB_SW_DIR /cvmfs/lhcb.cern.ch
 ENV MYSITEROOT     /cvmfs/lhcb.cern.ch
 
-# Install repo file
-RUN cd /etc/yum.repos.d/ && \
-    curl -O -L http://cvmrepo.web.cern.ch/cvmrepo/yum/cernvm.repo
-
-# Install repo keys
-RUN cd /etc/pki/rpm-gpg/ && \
-    curl -O -L http://cvmrepo.web.cern.ch/cvmrepo/yum/RPM-GPG-KEY-CernVM
+# install cvmfs
+RUN rpm -Uvh http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/6/x86_64/cvmfs-release-2-4.el6.noarch.rpm
 
 # Install rpms
 RUN yum -y install fuse cvmfs SL_no_colorls cvmfs-init-scripts cvmfs-auto-setup
