@@ -30,7 +30,7 @@ RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
 RUN ./pkr install GAUDI_v25r1_`echo $CMTCONFIG| tr "-" "_"`
 
 ## clean-up
-RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
+RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} /pkr && \
     mkdir $MYSITEROOT/{tmp,targz}
 
 ## temporary fixup for ROOT-6 install leaking into regular ROOT-5 install
