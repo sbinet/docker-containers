@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := binet/lhcb
-TAG := v37r1
+TAG := v34r1
 
 all: build
 	@echo "done"
