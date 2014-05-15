@@ -28,6 +28,9 @@ RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
 ## install (source+binaries)
 RUN ./pkr install DAVINCI_v34r1_`echo $CMTCONFIG| tr "-" "_"`
 
+## install manually QMTestFiles (bug in rpm deps)
+RUN ./pkr install PARAM_QMTestFiles
+
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} /pkr && \
     mkdir $MYSITEROOT/{tmp,targz}
