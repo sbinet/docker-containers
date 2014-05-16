@@ -1,8 +1,8 @@
-## binet/lhcb
+## binet/lhcb-davinci
 
 .PHONY: all build
 
-REPO := binet/lhcb
+REPO := binet/lhcb-davinci
 TAG := v34r1
 
 all: build

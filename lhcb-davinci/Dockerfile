@@ -1,5 +1,5 @@
 ##
-## binet/lhcb
+## binet/lhcb-davinci
 ## A container where the LHCb software stack (up to DaVinci) has been installed
 ##
 FROM binet/slc-base
@@ -28,7 +28,7 @@ RUN curl -O -L http://cern.ch/binet/sw/dist/pkr && \
 ## install (source+binaries)
 RUN ./pkr install DAVINCI_v34r1_`echo $CMTCONFIG| tr "-" "_"`
 
-## install manually QMTestFiles (bug in rpm deps)
+## FIXME: install manually QMTestFiles (bug in rpm deps)
 RUN ./pkr install PARAM_QMTestFiles
 
 ## clean-up
