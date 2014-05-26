@@ -9,7 +9,7 @@ USER root
 ENV USER root
 ENV HOME /root
 ENV VO_LHCB_SW_DIR /cvmfs/lhcb.cern.ch
-ENV MYSITEROOT     /cvmfs/lhcb.cern.ch
+ENV MYSITEROOT     /cvmfs/lhcb.cern.ch/lib
 
 # install cvmfs repos
 ADD etc-yum-cernvm.repo /etc/yum.repos.d/cernvm.repo
