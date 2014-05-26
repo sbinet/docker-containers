@@ -15,7 +15,7 @@ WORKDIR /root
 
 RUN mkdir -p /cvmfs/atlas.cern.ch && \
     mkdir -p /cvmfs/atlas-condb.cern.ch && \
-    echo "atlas.cern.ch /cvmfs/lhcb.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
+    echo "atlas.cern.ch /cvmfs/atlas.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
     echo "atlas-condb.cern.ch /cvmfs/atlas-condb.cern.ch cvmfs defaults 0 0" >> /etc/fstab
 
 
