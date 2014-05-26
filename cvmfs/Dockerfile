@@ -23,19 +23,9 @@ RUN yum update -y && yum -y install \
 
 WORKDIR /root
 
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key && \
-    ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
-# Bad security, add a user and sudo instead!
-RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
-# http://stackoverflow.com/questions/18173889/cannot-access-centos-sshd-on-docker
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
-RUN echo 'root:screencast' |chpasswd
-
 ## add files last (as this invalids caches)
 ADD dot-pythonrc.py  $HOME/.pythonrc.py
 ADD dot-bashrc       $HOME/.bashrc
-ADD dot-bash_profile $HOME/.bash_profile
 
 ADD etc-cvmfs-default-local /etc/cvmfs/default.local
 ADD etc-cvmfs-lhcb-local    /etc/cvmfs/config.d/lhcb.cern.ch.local
@@ -53,8 +43,6 @@ RUN echo "atlas.cern.ch /cvmfs/atlas.cern.ch cvmfs defaults 0 0" >> /etc/fstab &
     echo "atlas-condb.cern.ch /cvmfs/atlas-condb.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
     echo "lhcb.cern.ch /cvmfs/lhcb.cern.ch cvmfs defaults 0 0" >> /etc/fstab
 
-EXPOSE 22
-CMD /root/run-cvmfs.sh
 
 ## EOF
 
