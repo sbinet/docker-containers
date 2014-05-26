@@ -23,7 +23,8 @@ RUN yum update -y && yum -y install \
 
 WORKDIR /root
 
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key && \
+    ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
 # Bad security, add a user and sudo instead!
 RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
 # http://stackoverflow.com/questions/18173889/cannot-access-centos-sshd-on-docker
