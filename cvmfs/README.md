@@ -20,7 +20,7 @@ CernVM-FS: mounted cvmfs on /cvmfs/atlas-condb.cern.ch
 CernVM-FS: running with credentials 499:497
 CernVM-FS: loading Fuse module... done
 CernVM-FS: mounted cvmfs on /cvmfs/lhcb.cern.ch
-::: bye.
+::: mounting FUSE... [done]
 WARNING : using environment variable VO_LHCB_SW_DIR for sharedarea
 WARNING : Copying /etc/skel/.bash_profile to /root/.bash_profile
 ALWAYS  : Configuring LbScripts v7r10p4 from /cvmfs/lhcb.cern.ch/lib/lhcb/LBSCRIPTS/LBSCRIPTS_v7r10p4

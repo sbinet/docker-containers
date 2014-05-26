@@ -2,6 +2,5 @@
 
 echo "::: mounting FUSE..."
 mount -a
-
-echo "::: bye."
+echo "::: mounting FUSE... [done]"
 
