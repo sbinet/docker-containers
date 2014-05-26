@@ -12,14 +12,15 @@ $ docker run -h dev --privileged -i -t binet/cvmfs-lhcb bash
 ::: mounting FUSE...
 CernVM-FS: running with credentials 499:497
 CernVM-FS: loading Fuse module... done
-CernVM-FS: mounted cvmfs on /cvmfs/atlas.cern.ch
+CernVM-FS: mounted cvmfs on /cvmfs/cernvm-prod.cern.ch
 CernVM-FS: running with credentials 499:497
 CernVM-FS: loading Fuse module... done
-CernVM-FS: mounted cvmfs on /cvmfs/atlas-condb.cern.ch
+CernVM-FS: mounted cvmfs on /cvmfs/sft.cern.ch
 CernVM-FS: running with credentials 499:497
 CernVM-FS: loading Fuse module... done
 CernVM-FS: mounted cvmfs on /cvmfs/lhcb.cern.ch
 ::: mounting FUSE... [done]
+::: sourcing LbLogin...
 WARNING : using environment variable VO_LHCB_SW_DIR for sharedarea
 WARNING : Copying /etc/skel/.bash_profile to /root/.bash_profile
 ALWAYS  : Configuring LbScripts v7r10p4 from /cvmfs/lhcb.cern.ch/lib/lhcb/LBSCRIPTS/LBSCRIPTS_v7r10p4
@@ -44,6 +45,7 @@ Environment for LbScripts v7r10p4 ready.
  LbScripts v7r10p4 from /cvmfs/lhcb.cern.ch/lib/lhcb/LBSCRIPTS/LBSCRIPTS_v7r10p4,
  LCGCMT 68 from /cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_68,
  Compat v1r18 from /cvmfs/lhcb.cern.ch/lib/lhcb/COMPAT/COMPAT_v1r18)
+::: sourcing LbLogin... [done]
 
 
 [root@dev ~]# SetupProject GAUDI v25r1
