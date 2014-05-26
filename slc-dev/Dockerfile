@@ -21,7 +21,7 @@ RUN yum install -y \
     which
 
 ## install go
-RUN curl https://go.googlecode.com/files/go1.2.2.linux-amd64.tar.gz | \
+RUN curl https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz | \
     tar -C /usr/local -zxf -
 ENV PATH         /usr/local/go/bin:$PATH
 
