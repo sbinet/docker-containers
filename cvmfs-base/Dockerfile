@@ -27,7 +27,10 @@ ADD etc-cvmfs-default-local /etc/cvmfs/default.local
 ADD etc-cvmfs-domain-local  /etc/cvmfs/domain.d/cern.ch.local
 
 ADD run-cvmfs.sh /root/run-cvmfs.sh
-RUN mkdir -p /cvmfs/cernvm-prod.cern.ch
+
+RUN mkdir -p \
+    /cvmfs/cernvm-prod.cern.ch
+    /cvmfs/sft.cern.ch
 
 RUN echo "cernvm-prod.cern.ch /cvmfs/cernvm-prod.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
     echo "sft.cern.ch         /cvmfs/sft.cern.ch cvmfs defaults 0 0" >> /etc/fstab
