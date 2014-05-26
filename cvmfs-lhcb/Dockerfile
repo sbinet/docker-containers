@@ -1,0 +1,22 @@
+##
+## binet/cvmfs-lhcb
+## A container where CernVM-FS is up and running
+##
+FROM binet/cvmfs-base
+MAINTAINER Sebastien Binet "binet@cern.ch"
+
+USER root
+ENV USER root
+ENV HOME /root
+ENV VO_LHCB_SW_DIR /cvmfs/lhcb.cern.ch
+ENV MYSITEROOT     /cvmfs/lhcb.cern.ch/lib
+
+WORKDIR /root
+
+RUN mkdir -p /cvmfs/lhcb.cern.ch && \
+    echo "lhcb.cern.ch /cvmfs/lhcb.cern.ch cvmfs defaults 0 0" >> /etc/fstab
+
+ADD etc-cvmfs-lhcb-local    /etc/cvmfs/config.d/lhcb.cern.ch.local
+
+## EOF
+
