@@ -67,6 +67,7 @@ sudo mkdir -m 755 dev
 	sudo mknod -m 600 console c 5 1
 	sudo mknod -m 600 initctl p
 	sudo mknod -m 666 full c 1 7
+	sudo mknod -m 666 fuse c 10 229
 	sudo mknod -m 666 null c 1 3
 	sudo mknod -m 666 ptmx c 5 2
 	sudo mknod -m 666 random c 1 8
