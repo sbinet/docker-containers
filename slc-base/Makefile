@@ -10,7 +10,8 @@ all: build
 build: Dockerfile
 	docker build --rm --tag=$(BUILD_REPO):$(TAG) .
 	docker tag --force $(BUILD_REPO):$(TAG) $(BUILD_REPO):latest
-	docker cp $(BUILD_REPO):/build/docker.tar build
+	docker run $(BUILD_REPO):$(TAG) /bin/ls
+	docker cp $(shell docker ps -q -l):/build/docker.tar build
 	cat build/docker.tar | docker import - $(REPO):$(TAG)
 	docker tag --force $(REPO):$(TAG) $(REPO):latest
 
