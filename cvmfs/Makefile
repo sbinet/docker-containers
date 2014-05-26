@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := binet/cvmfs
-TAG := 20140506
+TAG := 20140526
 
 all: build
 	@echo "done"
