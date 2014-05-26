@@ -43,7 +43,7 @@ ADD etc-cvmfs-domain-local  /etc/cvmfs/domain.d/cern.ch.local
 ## start autofs to allow auto-mount of CernVM-FS volumes
 #RUN service autofs start
 
-ADD cvmfs-run.sh /root/run-cvmfs.sh
+ADD run-cvmfs.sh /root/run-cvmfs.sh
 RUN mkdir -p \
     /cvmfs/atlas.cern.ch /cvmfs/atlas-condb.cern.ch \
     /cvmfs/lhcb.cern.ch
