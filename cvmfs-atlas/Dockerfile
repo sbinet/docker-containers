@@ -18,6 +18,7 @@ RUN mkdir -p /cvmfs/atlas.cern.ch && \
     echo "atlas.cern.ch /cvmfs/atlas.cern.ch cvmfs defaults 0 0" >> /etc/fstab && \
     echo "atlas-condb.cern.ch /cvmfs/atlas-condb.cern.ch cvmfs defaults 0 0" >> /etc/fstab
 
+ADD dot-bashrc              $HOME/.bashrc
 
 ## EOF
 

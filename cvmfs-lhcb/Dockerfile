@@ -17,6 +17,7 @@ RUN mkdir -p /cvmfs/lhcb.cern.ch && \
     echo "lhcb.cern.ch /cvmfs/lhcb.cern.ch cvmfs defaults 0 0" >> /etc/fstab
 
 ADD etc-cvmfs-lhcb-local    /etc/cvmfs/config.d/lhcb.cern.ch.local
+ADD dot-bashrc              $HOME/.bashrc
 
 ## EOF
 
