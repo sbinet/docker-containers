@@ -14,6 +14,7 @@ build: Dockerfile
 
 upload: build
 	docker push $(REPO):$(TAG)
+	docker push $(REPO):latest
 
 
 
