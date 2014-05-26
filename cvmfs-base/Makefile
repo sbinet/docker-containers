@@ -1,8 +1,8 @@
-## binet/cvmfs-atlas
+## binet/cvmfs-base
 
 .PHONY: all build
 
-REPO := binet/cvmfs-atlas
+REPO := binet/cvmfs-base
 TAG := 20140526
 
 all: build
