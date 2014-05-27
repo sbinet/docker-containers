@@ -9,6 +9,9 @@ USER root
 ENV USER root
 ENV HOME /root
 
+## make sure FUSE can be enabled
+RUN if [[ ! -e /dev/fuse ]]; then mknod -m 666 /dev/fuse c 10 229; fi
+
 # install cvmfs repos
 ADD etc-yum-cernvm.repo /etc/yum.repos.d/cernvm.repo
 

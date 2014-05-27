@@ -11,6 +11,9 @@ ENV HOME /root
 ENV VO_ATLAS_SW_DIR       /cvmfs/atlas.cern.ch
 ENV ATLAS_LOCAL_ROOT_BASE $VO_ATLAS_SW_DIR/repo/ATLASLocalRootBase
 
+## make sure FUSE can be enabled
+RUN if [[ ! -e /dev/fuse ]]; then mknod -m 666 /dev/fuse c 10 229; fi
+
 WORKDIR /root
 
 RUN mkdir -p /cvmfs/atlas.cern.ch && \
