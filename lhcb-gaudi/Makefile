@@ -1,8 +1,8 @@
-## binet/gaudi
+## binet/lhcb-gaudi
 
 .PHONY: all build
 
-REPO := binet/gaudi
+REPO := binet/lhcb-gaudi
 TAG := v25r1
 
 all: build
