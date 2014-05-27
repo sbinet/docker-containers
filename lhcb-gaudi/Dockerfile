@@ -15,9 +15,6 @@ ENV CMTCONFIG x86_64-slc6-gcc48-opt
 ## install (source+binaries)
 RUN pkr install GAUDI_v25r1_`echo $CMTCONFIG| tr "-" "_"`
 
-## FIXME: broken dep on LBSCRIPTS (in RpmInstall ?)
-RUN pkr install LBSCRIPTS
-
 ## clean-up
 RUN /bin/rm -rf $MYSITEROOT/{tmp,targz} && \
     mkdir $MYSITEROOT/{tmp,targz}
