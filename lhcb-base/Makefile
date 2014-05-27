@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := binet/lhcb-base
-TAG := `date +%Y%m%d`
+TAG := $(TAG:`date +%Y%m%d`)
 
 all: build
 	@echo "done"
