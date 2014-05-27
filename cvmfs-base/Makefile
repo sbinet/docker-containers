@@ -3,7 +3,7 @@
 .PHONY: all build
 
 REPO := binet/cvmfs-base
-TAG := 20140526
+TAG := $(TAG:`date +%Y%m%d`)
 
 all: build
 	@echo "done"
